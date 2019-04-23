@@ -13,6 +13,7 @@ passport.serializeUser((user, done) => {
 });
 
 // deserialize browser cookie
+// adds user to req.user
 passport.deserializeUser((id, done) => {
   User.findById(id).then(user => {
     done(null, user);

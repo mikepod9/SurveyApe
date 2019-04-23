@@ -7,10 +7,12 @@ const bodyParser = require("body-parser");
 const keys = require("./config/keys");
 // User file is just executed
 require("./models/User");
+require("./models/Survey");
 // passport.js is not returning anything, just want to run the code
 require("./services/passport");
 const authRoutes = require("./routes/authRoutes");
 const billingRoutes = require("./routes/billingRoutes");
+const surveyRoutes = require("./routes/surveyRoutes");
 
 mongoose.connect(keys.mongoURI);
 
@@ -33,6 +35,7 @@ app.use(passport.session());
 // require("./routes/authRoutes")(app);
 authRoutes(app);
 billingRoutes(app);
+surveyRoutes(app);
 
 if (process.env.NODE_ENV === "production") {
   // Express can retrieve production assets
