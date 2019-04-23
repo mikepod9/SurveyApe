@@ -7,7 +7,7 @@ class Payments extends React.Component {
   render() {
     return (
       <StripeCheckout
-        name="Emaily" //who we pay to
+        name="SurveyApe" //who we pay to
         description="$5 for 5 survey credits"
         amount={500} //amount of money in US cents
         token={token => this.props.handleToken(token)} //Authorization token returned by stripe in the given callbakc function
