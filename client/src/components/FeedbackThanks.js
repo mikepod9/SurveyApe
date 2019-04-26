@@ -26,10 +26,12 @@ class FeedbackThanks extends React.Component {
 
   render() {
     return (
-      <div style={{ textAlign: "center" }}>
-        <h1>Thank You!</h1>
-        <p className="flow-text">Your feedback is valuable to our users.</p>
-        {this.renderSubject()}
+      <div className="container">
+        <h1 className="header center orange-text">Thank You!</h1>
+        <div className="row center">
+          <p className="flow-text">Your feedback is valuable to our users.</p>
+          {this.renderSubject()}
+        </div>
       </div>
     );
   }

@@ -13,7 +13,7 @@ class Payments extends React.Component {
         token={token => this.props.handleToken(token)} //Authorization token returned by stripe in the given callbakc function
         stripeKey={process.env.REACT_APP_STRIPE_KEY}
       >
-        <button className="btn">Add Credits</button>
+        <button className="btn orange">Add Credits</button>
       </StripeCheckout>
     );
   }

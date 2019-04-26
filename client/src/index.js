@@ -1,5 +1,6 @@
 // css import location does not matter, just need to import it once
 import "materialize-css/dist/css/materialize.min.css";
+import "./css/style.css";
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
