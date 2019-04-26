@@ -18,12 +18,21 @@ module.exports = app => {
     res.send(surveys);
   });
 
-  app.get("/api/surveys/:surveyId/:choice", (req, res) => {
-    res.send("Thanks for voting!");
+  app.get("/api/surveys/thanks", async (req, res) => {
+    const p = new Path("/surveys/thanks/:surveyId/:choice");
+    const match = p.test(req.query.surveyData);
+
+    const survey = await Survey.findOne({
+      _id: match.surveyId
+    }).select({
+      recipients: false
+    });
+
+    res.send(survey.subject);
   });
 
   app.post("/api/surveys/webhooks", (req, res) => {
-    const p = new Path("/api/surveys/:surveyId/:choice");
+    const p = new Path("/surveys/thanks/:surveyId/:choice");
 
     _.chain(req.body)
       .map(({ email, url }) => {
