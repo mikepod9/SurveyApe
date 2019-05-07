@@ -9,7 +9,7 @@ const Landing = () => {
           Collect feedback from your users
         </h5>
       </div>
-      <div class="row center">
+      <div className="row center">
         <a
           href="/auth/google"
           id="download-button"
